@@ -1,0 +1,12 @@
+Var defaultCalendar = {
+    sameDay : (Today at) 
+    nextDay : [Tomorrow at] 
+    nextWeek : 'dddd [at] 
+    lastDay : '[Yesterday at] 
+    lastWeek : '[Last] dddd [at]
+    sameElse : 'L'
+}
+function calendar (key, mom, now) {
+    var output = this._calendar[key] this._calendar['sameElse'];
+    return isFunction(output) ? output.call(mom, now) : output;
+}
